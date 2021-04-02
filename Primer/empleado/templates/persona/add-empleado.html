@@ -1,0 +1,55 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+{% block title %}
+  Registrar nuevo empleado
+{% endblock title %}
+
+
+
+{% block body %}
+<div class="grid-container">
+    <div class="grid-x align-center">
+        <h1 class="cell">Crear un nuevo empleado</h1>
+        <form class="cell grid-x grid-margin-x" method="POST" enctype="multipart/form-data">
+            <!--el enctype="multipart/form-data" es el que permite que se guarden las imagenes que se suban-->
+            {% csrf_token %}
+            <div class="cell medium-6">
+                <label for="">Nombres:</label>
+                {{form.first_name}}
+            </div>
+
+            <div class="cell medium-6">
+                <label for="">Apellidos:</label>
+                {{form.last_name}}
+            </div>
+
+            <div class="cell medium-6">
+                <label for="">Trabajo:</label>
+                {{form.job}}
+            </div>
+
+            <div class="cell medium-6">
+                <label for="">Departamento:</label>
+                {{form.departamento}}
+            </div>
+
+            <div class="cell medium-12">
+                <label for="">Habilidades:</label>
+                {{form.habilidades}}
+            </div>
+
+            <div class="cell">
+                <label for="">Avatar:</label>
+                {{form.avatar}}
+            </div>
+
+            <div class="cell">
+                <button class="button success" type="submit">Crear</button>
+            </div>
+        </form>
+    </div>
+</div>
+{% endblock body %}
+

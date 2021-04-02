@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+{% load static %}
+
+
+
+
+
+{% block title %}
+  {{ persona.full_name }}
+{% endblock title %}
+
+
+{% block body %}
+<div class="grid-container">
+    <div class="grid-x grid-margin-x align-center">
+        <div class="cell large-10 card" style="width: 300px; margin-top: 15px;">
+            <div class="card-divider">
+                {{ object.job }}
+            </div>
+            
+            {% if object.avatar %}
+            
+                <img src="{{ object.avatar.url }}">
+            {% else %}
+                <img src="{% static 'img/imagen1.jpg' %}" alt="">
+            {% endif %}
+                
+            <div class="card-section">
+                <p>{{ object.full_name }}</p>
+                <p>{{ object.departamento.short_name }}</p>
+                <p>Habilidades:</p>
+                <ul>
+                    
+                    {% for h in object.habilidades.all %}
+                    <!--aqui no quero que me devuelva lo que dice en la funcion str del modelo sino la variable del modelo
+                    en este caso (hablidad) que es la variable del modelo Habilidades-->
+                        <li>{{ h.hablidad }}</li>
+                    {% endfor %}
+                        
+                </ul>
+            </div>
+        </div>
+
+    </div>
+
+</div>
+{% endblock body %}
+
+
+
+
+<h1>Detalle de empleado</h1>
+
+{{empleado}}
+
+<h2>Todos los datos del empleado</h2>
+
+<p>{{empleado.first_name}}</p>
+<p>{{empleado.last_name}}</p>
+<p>{{empleado.departamento}}</p>
+<p>{{empleado.habilidades}}</p>

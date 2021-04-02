@@ -1,0 +1,16 @@
+<h1>Busqueda por palabra clave</h1>
+
+<form method='GET'>
+    {% csrf_token %}
+    <input type="text" id="keyword" name="keyword" placeholder="Ingrese nombre">
+    <button type="submit">Buscar</button>
+</form>
+
+<h3>Lista resultados</h3>
+<ul>
+    
+    {% for person in persona %}
+        <li>{{person}}</li>
+    {% endfor %}
+        
+</ul>

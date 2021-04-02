@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block title %}
+  Eliminar empleado
+{% endblock title %}
+
+
+{% block body %}
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Eliminar emplado: {{ object.full_name}} </h1>
+        <form class="cell" method="POST">
+            {% csrf_token %}
+            <div class="callout secondary">
+                <h5>Desea eliminar este empleado?</h5>
+                <p>Al eliminarlo, se borraran todos los datos del empleado.</p>
+                <button type="submit" class="alert button">Eliminar</button>
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+{% endblock body %}

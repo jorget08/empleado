@@ -1,0 +1,77 @@
+{% extends "base.html" %}
+{% load static %}
+
+
+
+{% block title %}
+    Nuevo departamento
+{% endblock title %}
+
+
+
+{% block body %}
+<div class="grid-container">
+    <div class="grid-x">
+        <h1 class="cell">Registrar Departamento</h1>
+        <form method="POST" class="cell callout grid-x grid-margin-x">
+            <!--callout es para que el grid tenca un borde-->
+            {% csrf_token %}
+            <h3 class="cell">Datos del empleado</h3>
+
+            <div class="cell medium-6">
+                <label>Nombres:</label>
+                {{ form.nombre}}
+            </div>
+
+            <div class="cell medium-6">
+                <label>Apellidos:</label>
+                {{ form.apellidos}}
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+
+            <h3 class="cell">Datos del departamento</h3>
+
+            <div class="cell medium-6">
+                <label>Departamento:</label>
+                {{ form.departamento}}
+            </div>
+
+            <div class="cell medium-6">
+                <label>Nombre corto:</label>
+                {{ form.short_name}}
+            </div>
+
+            <div class="cell">
+                <button class="button success" type="submit">Crear</button>
+            </div>
+
+        </form>
+    </div>
+</div>
+{% endblock body %}
+
+<h1>Datos Form</h1>
+
+<form method="POST">
+    {% csrf_token %}
+    <h3>Datos empleado</h3>
+    <p>
+        {{form.nombre}}
+    </p>
+    <p>
+        {{form.apellidos}}
+    </p>
+    <h3>Datos de Departamento</h3>
+    <p>
+        {{form.departamento}}
+    </p>
+    <p>
+        {{form.short_name}}
+    </p>
+
+    <button type="submit">Crear</button>
+
+</form>

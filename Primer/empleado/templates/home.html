@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %} Home {% endblock title %}
+
+
+{% block body %}
+
+<!--Inicio pagina de portada-->
+<div class="orbit" role="region" aria-label="Favorite Space Pictures" data-orbit>
+    <div class="orbit-wrapper">
+      <ul class="orbit-container">
+        <li class="is-active orbit-slide">
+          <figure class="orbit-figure">
+            <img class="orbit-image" src="{% static 'img/image2.jpg' %}" alt="Space">
+            <figcaption class="orbit-caption">Space, the final frontier.</figcaption>
+          </figure>
+        </li>
+      </ul>
+    </div>
+</div>
+<!--Fin pagina de portada-->
+<br>
+
+<!--Bloque de bienvenida-->
+
+<div class="grid-x align-center"><!--alisng-center hace que lo que este dentro de el sea centrado-->
+  <h1 class="cell large-8" style="font-size: 27px; text-align: center">Bienvenido al sistema de registro de empleados</h1>
+  <br>
+  <br>
+  <div class="cell large-7">
+    <div class="callout success">
+      <h5>Registre y controle empleados</h5>
+      <p>Disfruta haciendo tu compañia mas productiva</p>
+      <a href="#">Ver empleados</a>
+    </div>
+  </div>
+</div>
+
+<!--Fin bloque de bienvenida-->
+
+{% endblock body %}
